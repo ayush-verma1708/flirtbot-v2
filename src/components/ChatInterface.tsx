@@ -35,7 +35,7 @@ export default function ChatInterface({ onToggleSettings }: ChatInterfaceProps) 
         content: m.content
       }));
 
-      const response = await axios.post('https://flirtbot-jszs.onrender.com/api/chat', {
+      const response = await axios.post('http://localhost:5000/api/chat', {
         message: userMessage,
         history: serializedHistory
       }, {
@@ -96,7 +96,7 @@ export default function ChatInterface({ onToggleSettings }: ChatInterfaceProps) 
 
   const handleAuthSuccess = (token: string) => {
     localStorage.setItem('token', token);
-    toast.success('Welcome! You now have unlimited access to FlirtMaster AI');
+    toast.success('Welcome! You now have unlimited access to Wingman');
   };
 
   const formatTime = (date: Date) => {
@@ -111,7 +111,7 @@ export default function ChatInterface({ onToggleSettings }: ChatInterfaceProps) 
       <div className="flex items-center justify-between p-6 border-b bg-gradient-to-r from-purple-600 to-blue-600">
         <div className="flex items-center space-x-2">
           <Sparkles className="w-8 h-8 text-white" />
-          <h1 className="text-2xl font-bold text-white">FlirtMaster AI Coach</h1>
+          <h1 className="text-2xl font-bold text-white">Wingman </h1>
         </div>
         <button
           onClick={onToggleSettings}
@@ -129,7 +129,7 @@ export default function ChatInterface({ onToggleSettings }: ChatInterfaceProps) 
               animate={{ opacity: 1, y: 0 }}
               className="space-y-4"
             >
-              <h2 className="text-xl font-semibold text-gray-700">Welcome to FlirtMaster AI Coach</h2>
+              <h2 className="text-xl font-semibold text-gray-700">Welcome to Wingman </h2>
               <p>Start your journey to better conversations and connections.</p>
               <p className="text-sm">Ask me anything about dating, flirting, or relationship advice!</p>
             </motion.div>
