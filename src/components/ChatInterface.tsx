@@ -35,7 +35,7 @@ export default function ChatInterface({ onToggleSettings }: ChatInterfaceProps) 
         content: m.content
       }));
 
-      const response = await axios.post('http://localhost:5000/api/chat', {
+      const response = await axios.post('https://flirtbot-jszs.onrender.com/api/chat', {
         message: userMessage,
         history: serializedHistory
       }, {
